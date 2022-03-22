@@ -1,0 +1,9 @@
+#!/bin/sh
+
+COMMIT_MSG_FILE=$1
+COMMIT_SOURCE=$2
+SHA1=$3
+
+# Add extremism warning commit message 
+extremist_pre_commit_message='ДАННЫЙ КОММИТ (PULL REQUEST) СОЗДАН И (ИЛИ) ЗАПУШЕН ПРИ ИСПОЛЬЗОВАНИИ ПРОГРАММНОГО ПРОДУКТА (БИБЛИОТЕКИ / ФРЕЙМВОРКА), СОЗДАННОГО ИЛИ РАСПРОСТРАНЁННОГО ЭКСТРЕМИСТСКОЙ ОРГАНИЗАЦИЕЙ, И (ИЛИ) КОМАНДОЙ РАЗРАБОТЧИКОВ, ЗАНИМАЮЩИХ ДОЛЖНОСТЬ В ЭКСТРЕМИСТКОЙ ОРГАНИЗАЦИИ\n\n'
+echo "${extremist_pre_commit_message}$(cat $COMMIT_MSG_FILE)" > "$COMMIT_MSG_FILE"
